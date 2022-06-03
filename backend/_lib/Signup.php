@@ -26,6 +26,7 @@ class Signup extends Root{
         }
         else{
             $this->response['success'] = true;
+            $this->response['feedback'] = "register successfully";
         }
         
         if (empty($this->password)) {
@@ -33,12 +34,13 @@ class Signup extends Root{
         }
         else{
             $this->response['success'] = true;
+            $this->response['feedback'] = "register successfully";
         }
  
     }
 
     public function is_register(){
-        
+
     }
     public function create_user(){
 

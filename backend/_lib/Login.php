@@ -29,12 +29,13 @@ class Login extends Root {
 
             if($password == $row['password']){
                 //create session data
-                $_SESSION['mybook_userid'] = $row['user_id'];
-                //$this->response['response'] = true;
+                $_SESSION['projectEmaka_userid'] = $row['user_id'];
+                
+                $this->response['success'] = true;
+                $this->response['feedback'] = " User found ";
             }
             else{    
                 $this->error = " Wrong Password ";
-                //$this->response['response'] = false;
             }
         }
         else{
@@ -44,6 +45,8 @@ class Login extends Root {
         //return $this->response;
         
     }
+
+    // Testing as not be implement for this method.
     public function check_login($id){
 
         $query = "SELECT user_id FROM users user_id = '$id' LIMIT 1";
@@ -53,8 +56,8 @@ class Login extends Root {
         if($this->is_successful){
             $this->response['success'] = true;
         }
-        else {
-            $this->response['success'] = false;
-        }
+        
+        $this->response['success'] = false;
+        
     }
 }

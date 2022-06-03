@@ -1,5 +1,5 @@
 <?php 
-
+    
 session_start();
 
     include "../_lib/Login.php";
@@ -23,8 +23,7 @@ session_start();
         // $login->sanitize_data();
         $login->evaluate_data();
         $login->check_for_errors();
-        $login->check_login;
-        $signup->send_feedback();
+        $login->send_feedback();
         
     }
     else {

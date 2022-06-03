@@ -7,6 +7,7 @@
         public $db;
         public $env = '';
         public $error = "";
+        public $is_succesful = false;
 
         public function __construct() {
             $this->db = new DB();
