@@ -2,7 +2,7 @@
 
     class DB {
 
-        public $db_name = "emeka";
+        public $db_name = "project_mary_db";
         private $username = "root";
         private $password = "";
         private $host = "localhost";
@@ -17,7 +17,26 @@
         public function query($sql) {
             $this->is_successful = true;
             if (!mysqli_query($this->conn, $sql)) {
-                $this->feedback = mysqli_error($conn);
+                
+                $this->feedback = mysqli_error($sql);
+                
             }
+        }
+
+        public function read($query){
+
+            $this->is_successful = mysqli_query($this->conn, $query);
+
+            if(!$this->is_successful){
+                return false;
+            }
+            else{
+                $data = false;
+                while($row = mysqli_fetch_assoc($this->is_successful)){
+                    $data[] = $row;
+                }
+                return $data;
+            }
+            
         }
     }
