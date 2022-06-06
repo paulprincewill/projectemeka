@@ -9,7 +9,7 @@ session_start();
     
     if($env == "testing") {
         
-        $_POST['email'] = "testing15@gmail.com";
+        $_POST['email'] = "testing12@gmail.com";
         $_POST['password'] = "123456";
 
     }
@@ -26,8 +26,8 @@ session_start();
         
         // $signup->sanitize_data();
         $signup->validate_data();
-        $signup->check_for_errors();
         $signup->is_register();
+        $signup->check_for_errors();
         $signup->create_user();
         $signup->send_feedback();
         

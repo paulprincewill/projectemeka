@@ -39,4 +39,8 @@
             }
             
         }
+
+        public function conn(){
+            return $this->conn;
+        }
     }

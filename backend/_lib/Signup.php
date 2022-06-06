@@ -40,7 +40,17 @@ class Signup extends Root{
     }
 
     public function is_register(){
-
+        $email = $this->email;
+        $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";  
+        //connect database and send query
+        $is_successful = mysqli_query($this->db->conn(), $query);
+        
+       //if user exist send message
+        if (mysqli_num_rows($is_successful)) {
+            //Send message
+            $this->error = " User already exists ";
+        }
+    
     }
     public function create_user(){
 
