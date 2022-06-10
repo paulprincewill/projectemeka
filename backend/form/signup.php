@@ -26,7 +26,6 @@ session_start();
         
         // $signup->sanitize_data();
         $signup->validate_data();
-        $signup->check_for_errors();
         $signup->is_register();
         $signup->check_for_errors();
         $signup->create_user();
