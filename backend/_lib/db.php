@@ -2,7 +2,7 @@
 
     class DB {
 
-        public $db_name = "project_mary_db";
+        public $db_name = "project_emeka";
         private $username = "root";
         private $password = "";
         private $host = "localhost";
@@ -38,5 +38,9 @@
                 return $data;
             }
             
+        }
+
+        public function conn(){
+            return $this->conn;
         }
     }

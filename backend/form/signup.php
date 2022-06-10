@@ -4,12 +4,12 @@ session_start();
 
     include "../_lib/Signup.php";
     
-    $env = "testing";
+    $env = "";
     $signup = new Signup();
     
     if($env == "testing") {
         
-        $_POST['email'] = "testing15@gmail.com";
+        $_POST['email'] = "testing12@gmail.com";
         $_POST['password'] = "123456";
 
     }
@@ -20,7 +20,7 @@ session_start();
         
         
         // First get user details
-        $signup->email = $_POST["email"];
+        $signup->email = $_POST['email'];
         $signup->password = $_POST['password'];
         
         
@@ -28,6 +28,7 @@ session_start();
         $signup->validate_data();
         $signup->check_for_errors();
         $signup->is_register();
+        $signup->check_for_errors();
         $signup->create_user();
         $signup->send_feedback();
         

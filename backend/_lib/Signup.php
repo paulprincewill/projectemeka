@@ -16,21 +16,13 @@ class Signup extends Root{
     public function validate_data(){
  
         if (empty($this->email)) {
-
-            $this->error = "Email is empty!";
-
-            if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-                $this->error = " Invalid email address! ";
-            }
-
+            $this->error = " Email is empty!";         
         }
-        else{
-            $this->response['success'] = true;
-            $this->response['feedback'] = "register successfully";
+        elseif (empty($this->password)) {
+            $this->error = " Password is empty!";
         }
-        
-        if (empty($this->password)) {
-                $this->error = "Password is empty!";
+        elseif (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+            $this->error = " Invalid email address! ";
         }
         else{
             $this->response['success'] = true;
@@ -40,7 +32,17 @@ class Signup extends Root{
     }
 
     public function is_register(){
-
+        $email = $this->email;
+        $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";  
+        //connect database and send query
+        $is_successful = mysqli_query($this->db->conn(), $query);
+        
+       //if user exist send message
+        if (mysqli_num_rows($is_successful)) {
+            //Send message
+            $this->error = " User already exists ";
+        }
+    
     }
     public function create_user(){
 

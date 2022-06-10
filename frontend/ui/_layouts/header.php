@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Project Emeka</title>
-    <script src="frontend/js/_lib/vue.js"></script>
-    <script src="frontend/js/_lib/axios.min.js"></script>
-</head>
-<body>
-<header>
-    <nav>
-        <a>Profile</a>
-        <a>Log out</a>
-    </nav>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project Emeka || Official Website</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/index.css" />
+    <script src="../frontend/js/_lib/vue.js"></script>
+    <script src="../frontend/js/_lib/axios.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Logo -->
+      <div class="logo_wrapper">
+        <img src="../assets/img/Vector.png" alt="Logo" />
+      </div>
 
-<main>
-    
+      <!-- Nav Links & Login BTN -->
+      <nav id="login">
+        <a href="">Pricing</a>
+        <p>Call: 09056279228</p>
+        <button @click="loginBgControl">LOGIN</button>
+
+        <!-- Login Form -->
+        <?php
+        include "../frontend/ui/form/login.php"
+        ?>
+      </nav>
+    </header>
+    <main>
