@@ -1,8 +1,197 @@
 * {
-  margin: 0px;
-  padding: 0px;
-  border: none;
-  outline: none;
-  box-sizing: border-box;
-  font-family: sans-serif;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	outline: none;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+/* ------------------------------------- */
+/* Index.css merge here(No need to create two seperate for the same purpose) */
+
+:root {
+	--button_color: #05c452;
+}
+
+body {
+	background-image: url(../img/bg.png);
+	background-size: 100% 100%;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	height: 100vh;
+	padding: 20px 50px;
+}
+
+main {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+/* Header */
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+header .logo_wrapper img {
+	width: 100px;
+}
+
+header nav {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-gap: 30px;
+	align-items: center;
+	color: #fff;
+}
+
+header nav a {
+	color: #fff;
+	text-decoration: none;
+}
+
+header nav button {
+	color: #fff;
+	padding: 7px 30px;
+	background: var(--button_color);
+	border-radius: 50px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+header .form_wrapper {
+	/* display: none; */
+	background-color: rgba(0, 0, 0, 0.7);
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+}
+
+header form {
+	background-color: rgba(0, 0, 0, 0.7);
+	display: grid;
+	width: 250px;
+	border-radius: 10px;
+	position: absolute;
+	top: 100px;
+	right: 50px;
+}
+
+header form label {
+	display: grid;
+	font-weight: 700;
+	grid-gap: 5px;
+	padding: 10px 20px;
+}
+
+header form label:nth-child(2) {
+	border-top: 1px solid #ddd;
+}
+
+header form input {
+	background-color: transparent;
+	color: #fff;
+}
+
+header form input::placeholder {
+	color: #a3a3a3;
+}
+
+header form input[type="submit"] {
+	background: var(--button_color);
+	padding: 20px;
+	border-radius: 0px 0px 10px 10px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+header form .error_message {
+	border-top: 1px solid #ddd;
+	padding: 10px 20px;
+}
+
+header form .error_message p {
+	font-size: 12px;
+	color: #fb8181;
+}
+
+/* Hero Section */
+.hero {
+	color: #fff;
+	display: grid;
+	grid-gap: 30px;
+}
+
+.hero h1 {
+	font-size: 40px;
+	max-width: 500px;
+}
+
+.hero p {
+	font-size: 20px;
+	max-width: 450px;
+	word-spacing: 2px;
+	line-height: 30px;
+}
+
+.hero_form {
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	max-width: 600px;
+	padding: 20px 0;
+}
+
+.hero_form form {
+	display: grid;
+	grid-template-columns: 1fr 1fr auto;
+	grid-gap: 25px;
+	padding: 0 20px;
+}
+
+.hero_form label {
+	display: grid;
+	grid-gap: 10px;
+	font-weight: 700;
+}
+
+.hero_form label:nth-child(1) {
+	border-right: 2px solid #fff;
+}
+
+.hero_form input {
+	background-color: transparent;
+	color: #fff;
+	padding-right: 10px;
+}
+
+.hero_form input::placeholder {
+	color: #a3a3a3;
+}
+
+.hero_form input[type="submit"] {
+	background-color: var(--button_color);
+	height: 40px;
+	padding: 0 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12px;
+	border-radius: 360px;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.hero_form .error_message {
+	border-top: 1px solid #ddd;
+	margin-top: 20px;
+	padding: 10px 20px 0;
+}
+
+.hero_form .error_message p {
+	font-size: 12px;
+	color: #fb8181;
+	word-spacing: normal;
 }

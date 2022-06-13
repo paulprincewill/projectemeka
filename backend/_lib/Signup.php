@@ -16,20 +16,13 @@ class Signup extends Root{
     public function validate_data(){
  
         if (empty($this->email)) {
-<<<<<<< HEAD
-            $this->error = " Email is empty!";         
-=======
-            $this->error = "Email is empty!";            
-        }
-        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            $this->error = " Invalid email address! ";
->>>>>>> 24d40416fa94a34c1a6ca7c060d9dc518f648476
-        }
-        elseif (empty($this->password)) {
-            $this->error = " Password is empty!";
+            $this->error = " Email is empty!";                   
         }
         elseif (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->error = " Invalid email address! ";
+        }
+        elseif (empty($this->password)) {
+            $this->error = " Password is empty!";
         }
         else{
             $this->response['success'] = true;
