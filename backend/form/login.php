@@ -4,7 +4,7 @@ session_start();
 
     include "../_lib/Login.php";
 
-    $env = "testing";
+    $env = "";
     $login = new Login();
     
     if($env == "testing") {

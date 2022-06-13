@@ -7,6 +7,7 @@ class Signup extends Root{
     public $password = "";
     
     public function __construct() {
+
         // Called the parent constructor(which from Root.php).
         parent::__construct();
         $_POST = json_decode(file_get_contents("php://input"),true);
@@ -16,14 +17,11 @@ class Signup extends Root{
     public function validate_data(){
  
         if (empty($this->email)) {
-<<<<<<< HEAD
             $this->error = " Email is empty!";         
-=======
             $this->error = "Email is empty!";            
         }
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->error = " Invalid email address! ";
->>>>>>> 24d40416fa94a34c1a6ca7c060d9dc518f648476
         }
         elseif (empty($this->password)) {
             $this->error = " Password is empty!";

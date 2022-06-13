@@ -1,20 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
 :root {
   --button_color: #05c452;
 }
 
 body {
-  background-image: url(../img/bg.png);
+  background-image: url(../../_img/bg.png);
   background-size: 100% 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-  height: 100vh;
-  padding: 20px 50px;
 }
 
 main {
-  height: 100%;
-  display: flex;
+  width: 100vw;
+  height: 100vh;
+  max-width: 1200px;
+  display: grid;
+  grid-template-rows: auto 1fr;
   align-items: center;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 /* Header */
@@ -29,7 +39,7 @@ header .logo_wrapper img {
 
 header nav {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(2, auto);
   grid-gap: 30px;
   align-items: center;
   color: #fff;
@@ -38,6 +48,17 @@ header nav {
 header nav a {
   color: #fff;
   text-decoration: none;
+  display: none;
+}
+
+header nav p {
+  display: none;
+}
+
+header nav .menu_icon {
+  display: flex;
+
+  width: 40px;
 }
 
 header nav button {
@@ -51,7 +72,7 @@ header nav button {
 
 header .form_wrapper {
   /* display: none; */
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.92);
   position: fixed;
   top: 0px;
   left: 0px;
@@ -65,19 +86,28 @@ header form {
   width: 250px;
   border-radius: 10px;
   position: absolute;
-  top: 100px;
   right: 50px;
+  padding-top: 40px;
+  animation: login_animation 1s ease forwards;
+}
+
+header form span {
+  color: #a3a3a3;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
 }
 
 header form label {
   display: grid;
   font-weight: 700;
   grid-gap: 5px;
-  padding: 10px 20px;
+  padding: 15px 20px;
 }
 
-header form label:nth-child(2) {
-  border-top: 1px solid #ddd;
+header form label:nth-child(3) {
+  border-top: 1px solid #a3a3a3;
 }
 
 header form input {
@@ -99,12 +129,12 @@ header form input[type="submit"] {
 
 header form .error_message {
   border-top: 1px solid #ddd;
-  padding: 10px 20px;
+  padding: 15px 20px;
 }
 
 header form .error_message p {
   font-size: 12px;
-  color: #fb8181;
+  color: #fff;
 }
 
 /* Hero Section */
@@ -114,29 +144,30 @@ header form .error_message p {
   grid-gap: 30px;
 }
 
-.hero h1 {
-  font-size: 40px;
+.hero_text {
   max-width: 500px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 40px);
+  margin-bottom: 30px;
 }
 
 .hero p {
   font-size: 20px;
-  max-width: 450px;
   word-spacing: 2px;
   line-height: 30px;
 }
 
 .hero_form {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   max-width: 600px;
   padding: 20px 0;
 }
-
 .hero_form form {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  grid-gap: 25px;
+  grid-gap: 20px;
   padding: 0 20px;
 }
 
@@ -146,14 +177,11 @@ header form .error_message p {
   font-weight: 700;
 }
 
-.hero_form label:nth-child(1) {
-  border-right: 2px solid #fff;
-}
-
 .hero_form input {
   background-color: transparent;
   color: #fff;
-  padding-right: 10px;
+  border-bottom: 1px solid #a3a3a3;
+  padding-bottom: 20px;
 }
 
 .hero_form input::placeholder {
@@ -171,16 +199,15 @@ header form .error_message p {
   border-radius: 360px;
   font-weight: 700;
   cursor: pointer;
+  border-bottom: none;
 }
 
 .hero_form .error_message {
-  border-top: 1px solid #ddd;
-  margin-top: 20px;
-  padding: 10px 20px 0;
+  padding-left: 20px;
 }
 
 .hero_form .error_message p {
   font-size: 12px;
-  color: #fb8181;
+  color: #fff;
   word-spacing: normal;
 }

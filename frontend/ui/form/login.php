@@ -1,5 +1,6 @@
-        <div class="form_wrapper" v-if="loginBg==='show'" @click="loginBgControl">
+        <div class="form_wrapper" v-if="loginBg==='show'">
             <form @submit.prevent="login">
+                <span @click="loginBgControl">X</span>
                 <label for="loginEmail">
                     Email
                     <input
@@ -21,7 +22,7 @@
                     />
                 </label>
                 <div class="error_message" v-if="response.feedback!==undefined">
-                    <p>{{this.response.feedback}}</p>
+                    <p>X &nbsp; {{this.response.feedback}}</p>
                 </div>
                 <input type="submit" value="LOGIN" />
             </form>
