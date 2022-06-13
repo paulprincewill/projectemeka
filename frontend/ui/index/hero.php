@@ -1,4 +1,5 @@
 <section class="hero">
+<<<<<<< HEAD
     <h1>The easiest way to manage Rents</h1>
     <p>Manage rents, property and tenants from the comforts of your couch.</p>
 
@@ -21,3 +22,15 @@
         </div>
     </div>
 </section>
+=======
+  <div class="hero_text">
+    <h1>The easiest way to manage Rents</h1>
+    <p>Manage rents, property and tenants from the comforts of your couch.</p>
+  </div>
+
+  <?php
+        include "../frontend/ui/form/signup.php"
+  ?>
+  </div>
+</section>
+>>>>>>> 2e17d4ba47af504d497271040328fd71809fa2c6

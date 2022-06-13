@@ -5,7 +5,10 @@ createApp({
     return {
       loginBg: "hide",
       response: {},
-      post: {},
+      post: {
+        email: "",
+        password: "",
+      },
     };
   },
   methods: {
@@ -19,7 +22,14 @@ createApp({
     login() {
       axios
         .post("../backend/form/login.php", this.post)
-        .then((response) => (this.response = response.data));
+        .then((response) => (this.response = response.data))
+        .then(() => {
+          if (this.response.success === true) {
+            window.location.assign(
+              "http://localhost/ProjectEmeka/pages/dashboard.php"
+            );
+          }
+        });
     },
   },
 }).mount("#login");

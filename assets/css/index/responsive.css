@@ -1,0 +1,37 @@
+@media screen and (min-width: 660px) {
+  /* Header */
+  header nav {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  header nav a,
+  header nav p {
+    display: block;
+  }
+
+  header nav .menu_icon {
+    display: none;
+  }
+
+  /* Hero */
+  .hero form {
+    grid-template-columns: 1fr 1fr auto;
+  }
+
+  .hero_form input {
+    border-bottom: none;
+    padding: 0px;
+  }
+
+  .hero_form label:nth-child(1) {
+    border-right: 1px solid #a3a3a3;
+    border-bottom: none;
+  }
+
+  .hero_form .error_message {
+    order: 1;
+    grid-column: 1 / end;
+    border-top: 1px solid #a3a3a3;
+    padding-top: 10px;
+  }
+}
