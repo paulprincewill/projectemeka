@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+
+RewriteRule ^index.php pages/index.php [NC,L]
+RewriteRule ^$ pages/index.php [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/?$ pages/$1.php [NC,L]
