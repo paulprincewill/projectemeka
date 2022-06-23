@@ -49,10 +49,22 @@ class Login extends Root {
                 $this->error = " Wrong Password! ";
             }
         }
+<<<<<<< HEAD
         // else {
         //     $this->error = "User does not exist!"
         // }
  
+=======
+        if (empty($this->email)) {
+            $this->error = "Email is empty!";                     
+        }elseif (empty($this->password)) {
+            $this->error = " Password is empty!";
+        }
+       
+    
+        //return $this->response;
+        
+>>>>>>> 23cb677a421b466bee3653b8572758ceb296d8ff
     }
 
     // Testing as not be implement for this method.
