@@ -24,10 +24,11 @@ createApp({
         .post("../backend/form/login.php", this.post)
         .then((response) => (this.response = response.data))
         .then(() => {
+          console.log(this.response);
+        })
+        .then(() => {
           if (this.response.success === true) {
-            window.location.assign(
-              "http://localhost/ProjectEmeka/pages/dashboard.php"
-            );
+            window.location.assign("add_properties.php");
           }
         });
     },

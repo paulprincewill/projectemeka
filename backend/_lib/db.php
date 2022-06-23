@@ -2,7 +2,7 @@
 
     class DB {
 
-        public $db_name = "project_emeka";
+        public $db_name = "project_mary_db";
         private $username = "root";
         private $password = "";
         private $host = "localhost";

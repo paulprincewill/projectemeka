@@ -35,3 +35,9 @@
     padding-top: 10px;
   }
 }
+
+@media screen and (min-width: 800px) {
+  .hero .right_side {
+    display: block;
+  }
+}

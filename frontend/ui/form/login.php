@@ -22,7 +22,7 @@
                     />
                 </label>
                 <div class="error_message" v-if="response.feedback!==undefined">
-                    <p>X &nbsp; {{this.response.feedback}}</p>
+                    <p>{{this.response.feedback}}</p>
                 </div>
                 <input type="submit" value="LOGIN" />
             </form>

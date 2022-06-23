@@ -6,9 +6,9 @@
       <img src="../assets/_img/Em_logo.svg" alt="Logo" />
     </div>
 
-    <!-- User -->
-    <div class="user">
-      <h4>Kunle</h4>
+    <!-- acct -->
+    <div class="acct">
+      <h4>Kunle Ednort</h4>
       <p>Landlord Acct</p>
     </div>
   </div>

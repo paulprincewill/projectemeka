@@ -8,7 +8,11 @@
   border: none;
   outline: none;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "general sans";
+  font-weight: 500;
+  list-style-type: none;
+  -webkit-user-select: none;
+  width: 100%;
 }
 
 main {
@@ -17,10 +21,17 @@ main {
   height: 100vh;
 }
 
+button {
+  width: max-content;
+  cursor: pointer;
+}
+
 aside {
   border-right: 1px solid #ddd;
-  width: 15.625em;
+  width: 17.5em;
   padding: 1.25em;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
 }
 
 header .logo_and_user_wrapper {
@@ -36,14 +47,15 @@ header .logo_wrapper img {
   width: 3.25em;
 }
 
-header .user p {
+header .acct p {
   color: var(--gray_text_color);
   margin-top: 0.5em;
 }
 
 header label {
   display: flex;
-  border: 1px solid #ababab;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
   border-radius: 0.5em;
   padding: 0.4em;
   margin-top: 0.75em;
@@ -58,6 +70,271 @@ header label input {
   width: 100%;
   padding-left: 0.4em;
   color: var(--gray_text_color);
+  background-color: transparent;
 }
 
 /* Side Navigations */
+.side_nav {
+  border-bottom: 1px solid #ddd;
+  padding: 1.5em 0;
+}
+.side_nav ul {
+  display: grid;
+  gap: 1em;
+  padding-left: 0.75em;
+}
+
+aside .list {
+  display: flex;
+  align-items: end;
+  transition: 0.5s;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+aside .list:hover {
+  opacity: 0.8;
+}
+
+aside .list img {
+  width: 1.5em;
+}
+
+aside .list p {
+  font-size: 1rem;
+  margin-left: 0.5em;
+}
+
+aside .user {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  margin-top: 1.5em;
+}
+
+aside .user img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  margin-right: 0.5em;
+}
+
+aside .user .details p {
+  color: var(--gray_text_color);
+  font-size: 0.75rem;
+  margin-top: 0.3em;
+}
+
+aside .user button {
+  font-size: 0.7rem;
+  color: var(--gray_text_color);
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+aside .logout_btn {
+  background-color: #7a8699;
+  color: #fff;
+  padding: 0.75em 0;
+  width: 100%;
+  border-radius: 0.5em;
+}
+
+/* Side Properties */
+.side_properties {
+  padding: 1.5em 0 0 0.75em;
+}
+
+.side_properties .header_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.side_properties .header_wrapper div {
+  display: flex;
+  align-items: end;
+  opacity: 0.8;
+}
+
+.side_properties .header_wrapper div img {
+  width: 1.5em;
+}
+
+.side_properties .header_wrapper div h5 {
+  font-size: 1.1rem;
+  line-height: 1em;
+  margin-left: 0.5em;
+}
+
+.side_properties .header_wrapper button {
+  font-size: 0.7rem;
+  color: var(--gray_text_color);
+  padding: 0 1em;
+  border-radius: 1em;
+}
+
+.side_properties ul {
+  display: grid;
+  gap: 0.5em;
+  padding-left: 0.75em;
+  padding-top: 0.75em;
+}
+
+.side_properties ul li {
+  display: flex;
+}
+
+.side_properties ul li .color_box {
+  width: 1em;
+  height: 1em;
+  background: #97fac5;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+}
+
+.side_properties ul button {
+  background-color: transparent;
+  display: flex;
+  align-items: end;
+  margin-top: 0.5em;
+  opacity: 0.5;
+}
+
+.side_properties ul button:hover {
+  opacity: 0.8;
+}
+
+.side_properties ul button img {
+  width: 1.5em;
+  margin-right: 0.5em;
+}
+
+.side_properties ul button p {
+  font-size: 1rem;
+}
+
+.page_content {
+  padding: 2.5em;
+}
+
+section h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #666666;
+  margin-bottom: 0.5em;
+}
+
+/* ADD PROPERTY PAGE */
+.add_property form {
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+}
+
+.add_property form h4 {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.add_property form h5 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.property_name_and_number_of_apartments_wrapper {
+  display: flex;
+  padding: 1.5em;
+  border-bottom: 1px solid #ddd;
+}
+
+.property_name_wrapper {
+  max-width: 17em;
+  border-right: 1px solid #ddd;
+}
+
+.property_name_wrapper input {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.number_of_apartments_wrapper {
+  padding-left: 1.5em;
+}
+
+.number_of_apartments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5em;
+  width: min-content;
+}
+
+.number_of_apartments p {
+  color: #a3a3a3;
+}
+
+.number_of_apartments i {
+  display: grid;
+  place-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  border: 2px solid #ddd;
+  border-radius: 360px;
+}
+
+.number_of_apartments i img {
+  width: 80%;
+}
+
+.add_apartments_wrapper {
+  padding: 1.5em;
+}
+
+.add_apartment_details_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  width: max-content;
+}
+
+.add_apartment_type_wrapper select {
+  font-size: 1rem;
+  color: #a3a3a3;
+  appearance: none;
+}
+
+.add_apartment_status {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.5em;
+}
+
+.add_apartment_status label {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 0.5em;
+  align-items: center;
+}
+
+.add_apartment_status label input {
+  display: none;
+}
+
+.add_apartment_status label input:checked + .radio {
+  background-color: #a3a3a3;
+}
+
+.add_apartment_status label .radio {
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+}
+
+.add_apartment_status label p {
+  font-size: 0.9em;
+  color: var(--gray_text_color);
+}
+
+.add_apartment_tenant_wrapper {
+  display: none;
+}

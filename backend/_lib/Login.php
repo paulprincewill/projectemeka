@@ -16,9 +16,21 @@ class Login extends Root {
     
     public function evaluate_data(){
         
+        //check if field is empty!
+        if(empty($this->email) && empty($this->password)){
+            $this->error = "Email and Password field is Empty!";
+        }
+        elseif (empty($this->email)) {
+            $this->error = "Email is empty!";                     
+        }
+        elseif (empty($this->password)) {
+            $this->error = " Password is empty!";
+        }
+        
+        //Initailize variable for email and password.
         $email = $this->email;
         $password = $this->password;
-        
+
         $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
 
         $this->is_successful = $this->db->read($query);
@@ -30,20 +42,17 @@ class Login extends Root {
             if($password == $row['password']){
                 //create session data
                 $_SESSION['projectEmaka_userid'] = $row['user_id'];
-                
                 $this->response['success'] = true;
                 $this->response['feedback'] = " User found ";
             }
             else{    
-                $this->error = " Wrong Password ";
+                $this->error = " Wrong Password! ";
             }
         }
-        else{
-            $this->error = " Invalid email address! ";
-        }
-    
-        //return $this->response;
-        
+        // else {
+        //     $this->error = "User does not exist!"
+        // }
+ 
     }
 
     // Testing as not be implement for this method.
